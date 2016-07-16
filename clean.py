@@ -1,8 +1,8 @@
-with open("data2012.json", "r") as f:
+with open("input/data2012.json", "r") as f:
     with open("dataprocessed.json", 'w+') as p:
-        p.write("[")
+        p.write("""{"root": {""")
         for line in f:
             line = line + ','
             p.write(line)
             print "."
-        p.write("]")
+        p.write("}")
