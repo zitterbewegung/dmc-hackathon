@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modelinterface type="DomeModelInterface" id="f0e504ec-dce8-1004-80d3-cd671a05d468" name="Velocity Model Interface">
+    <interfaceinfo>
+        <version>0.0.1</version>
+    </interfaceinfo>
+    <parameters>
+        <parameter id="f0e504f6-dce8-1004-80d3-cd671a05d468" name="v0">
+            <currentType value="Real"/>
+            <data>
+                <dataobject type="Real">
+                    <quantity magnitude="1.0" unit="[MPS]"/>
+                </dataobject>
+            </data>
+        </parameter>
+        <parameter id="f0e504f7-dce8-1004-80d3-cd671a05d468" name="a">
+            <currentType value="Real"/>
+            <data>
+                <dataobject type="Real">
+                    <quantity magnitude="2.0" unit="[MPs_S]"/>
+                </dataobject>
+            </data>
+        </parameter>
+        <parameter id="f0e504f8-dce8-1004-80d3-cd671a05d468" name="t">
+            <currentType value="Real"/>
+            <data>
+                <dataobject type="Real">
+                    <quantity magnitude="3.0" unit="s"/>
+                </dataobject>
+            </data>
+        </parameter>
+        <parameter id="f0e504f9-dce8-1004-80d3-cd671a05d468" name="v">
+            <currentType value="Real"/>
+            <data>
+                <dataobject type="Real">
+                    <quantity magnitude="7.0" unit="[MPS]"/>
+                </dataobject>
+            </data>
+        </parameter>
+    </parameters>
+    <visualizations/>
+    <relations/>
+    <contexts>
+        <context id="IFACE_MODEL_CXT" name="Model View"/>
+        <context id="f0e504f1-dce8-1004-80d3-cd671a05d468" name="Input Dimensions">
+            <modelobjects>
+                <parameter name="v0" idRef="f0e504f6-dce8-1004-80d3-cd671a05d468"/>
+                <parameter name="a" idRef="f0e504f7-dce8-1004-80d3-cd671a05d468"/>
+                <parameter name="t" idRef="f0e504f8-dce8-1004-80d3-cd671a05d468"/>
+            </modelobjects>
+        </context>
+        <context id="f0e504f2-dce8-1004-80d3-cd671a05d468" name="Output Dimensions">
+            <modelobjects>
+                <parameter name="v" idRef="f0e504f9-dce8-1004-80d3-cd671a05d468"/>
+            </modelobjects>
+        </context>
+    </contexts>
+    <views>
+        <view name="Build View">
+            <context id="IFACE_BUILD_CXT" name="Build View">
+                <modelobjects>
+                    <context name="Input Dimensions" idRef="f0e504f1-dce8-1004-80d3-cd671a05d468"/>
+                    <context name="Output Dimensions" idRef="f0e504f2-dce8-1004-80d3-cd671a05d468"/>
+                </modelobjects>
+            </context>
+        </view>
+        <view name="Interface Causality View">
+            <filter id="INPUTS_FILTER" name="Inputs">
+                <parameters>
+                    <parameter name="v0" idRef="f0e504f6-dce8-1004-80d3-cd671a05d468"/>
+                    <parameter name="a" idRef="f0e504f7-dce8-1004-80d3-cd671a05d468"/>
+                    <parameter name="t" idRef="f0e504f8-dce8-1004-80d3-cd671a05d468"/>
+                </parameters>
+            </filter>
+            <filter id="OUTPUTS_FILTER" name="Outputs">
+                <parameters>
+                    <parameter name="v" idRef="f0e504f9-dce8-1004-80d3-cd671a05d468" causality="Result"/>
+                </parameters>
+            </filter>
+            <filter id="INDETERMINATES_FILTER" name="Indeterminates"/>
+        </view>
+    </views>
+    <directedGraph id="f0e504ec-dce8-1004-80d3-cd671a05d468">
+        <nodes>
+            <node idRef="f0e504f6-dce8-1004-80d3-cd671a05d468"/>
+            <node idRef="f0e504f7-dce8-1004-80d3-cd671a05d468"/>
+            <node idRef="f0e504f8-dce8-1004-80d3-cd671a05d468"/>
+            <node idRef="f0e504f9-dce8-1004-80d3-cd671a05d468"/>
+        </nodes>
+        <arcs>
+            <from idRef="f0e504f6-dce8-1004-80d3-cd671a05d468">
+                <to idRef="f0e504f9-dce8-1004-80d3-cd671a05d468"/>
+            </from>
+            <from idRef="f0e504f7-dce8-1004-80d3-cd671a05d468">
+                <to idRef="f0e504f9-dce8-1004-80d3-cd671a05d468"/>
+            </from>
+            <from idRef="f0e504f8-dce8-1004-80d3-cd671a05d468">
+                <to idRef="f0e504f9-dce8-1004-80d3-cd671a05d468"/>
+            </from>
+        </arcs>
+    </directedGraph>
+    <interfaceToRelParamMap>
+        <iToRpMap relParamId="f0e504f6-dce8-1004-80d3-cd671a05d468" ifaceId="f0e504e3-dce8-1004-80d3-cd671a05d468"/>
+        <iToRpMap relParamId="f0e504f7-dce8-1004-80d3-cd671a05d468" ifaceId="f0e504e6-dce8-1004-80d3-cd671a05d468"/>
+        <iToRpMap relParamId="f0e504f8-dce8-1004-80d3-cd671a05d468" ifaceId="f0e504e9-dce8-1004-80d3-cd671a05d468"/>
+        <iToRpMap relParamId="f0e504f9-dce8-1004-80d3-cd671a05d468" ifaceId="f0e504e0-dce8-1004-80d3-cd671a05d468"/>
+    </interfaceToRelParamMap>
+</modelinterface>

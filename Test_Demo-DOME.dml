@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model type="DomeModel" id="f0e504c2-dce8-1004-80d3-cd671a05d468" name="Velocity Dome Model">
+    <modelinfo>
+        <version>0.0.3</version>
+    </modelinfo>
+    <parameters/>
+    <relations>
+        <relation type="Procedural" id="f0e504d0-dce8-1004-80d3-cd671a05d468" name="Procedural Relation">
+            <body><![CDATA[]]></body>
+            <dependencies/>
+        </relation>
+        <relation type="Procedural" id="f0e504d8-dce8-1004-80d3-cd671a05d468" name="Velocity Relation">
+            <parameters>
+                <parameter id="f0e504e0-dce8-1004-80d3-cd671a05d468" name="v">
+                    <currentType value="Real"/>
+                    <data>
+                        <dataobject type="Real">
+                            <quantity magnitude="7.0" unit="[MPS]"/>
+                        </dataobject>
+                    </data>
+                </parameter>
+                <parameter id="f0e504e3-dce8-1004-80d3-cd671a05d468" name="v0">
+                    <currentType value="Real"/>
+                    <data>
+                        <dataobject type="Real">
+                            <quantity magnitude="1.0" unit="[MPS]"/>
+                        </dataobject>
+                    </data>
+                </parameter>
+                <parameter id="f0e504e6-dce8-1004-80d3-cd671a05d468" name="a">
+                    <currentType value="Real"/>
+                    <data>
+                        <dataobject type="Real">
+                            <quantity magnitude="2.0" unit="[MPs_S]"/>
+                        </dataobject>
+                    </data>
+                </parameter>
+                <parameter id="f0e504e9-dce8-1004-80d3-cd671a05d468" name="t">
+                    <currentType value="Real"/>
+                    <data>
+                        <dataobject type="Real">
+                            <quantity magnitude="3.0" unit="s"/>
+                        </dataobject>
+                    </data>
+                </parameter>
+            </parameters>
+            <body><![CDATA[v=v0+a*t]]></body>
+            <dependencies>
+                <dependency idRef="f0e504e0-dce8-1004-80d3-cd671a05d468">
+                    <parameter name="v0" idRef="f0e504e3-dce8-1004-80d3-cd671a05d468" idRelationRef="f0e504d8-dce8-1004-80d3-cd671a05d468"/>
+                    <parameter name="a" idRef="f0e504e6-dce8-1004-80d3-cd671a05d468" idRelationRef="f0e504d8-dce8-1004-80d3-cd671a05d468"/>
+                    <parameter name="t" idRef="f0e504e9-dce8-1004-80d3-cd671a05d468" idRelationRef="f0e504d8-dce8-1004-80d3-cd671a05d468"/>
+                </dependency>
+            </dependencies>
+        </relation>
+    </relations>
+    <visualizations/>
+    <contexts>
+        <context id="BUILD_CXT" name="Build View">
+            <modelobjects>
+                <relation name="Velocity Relation" idRef="f0e504d8-dce8-1004-80d3-cd671a05d468"/>
+            </modelobjects>
+        </context>
+        <context id="FILE_CXT" name="Files"/>
+    </contexts>
+    <mappings/>
+    <auxfiles/>
+</model>
